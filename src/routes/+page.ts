@@ -16,6 +16,12 @@ export const load = (({ params }) => {
 				content:
 					'An application based on tesseract that lets you extract text from your image on any language.',
 				imagePath: '/textextractor.png'
+			}, {
+				link: 'https://1choice.construction/',
+				title: '1Choice construction',
+				content:
+					'A landing page for a siding company.',
+				imagePath: '/1stChoiceConstruction.png'
 			}
 		]
 	};
