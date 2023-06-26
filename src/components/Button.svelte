@@ -1,10 +1,4 @@
-<script lang="ts">
-	// import { Icons } from "@/components/icons";
-	import { cva } from 'class-variance-authority';
-	import { cn } from '../lib/client/utils';
-
-	export let handleClick: any = null;
-
+<script context="module">
 	export const buttonVariants = cva(
 		'active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:tring-slate-400 focus:ring-offset-2 disabled:opacoty-50 disabled:pointer-events-none gap-x-2',
 		{
@@ -25,11 +19,17 @@
 			}
 		}
 	);
-
-	const { isLoading, className, variant, size, ...props } = $$props;
 </script>
 
-<button class={cn(buttonVariants({ variant, size, className }))} {...props} on:click={handleClick}>
+<script lang="ts">
+	// import { Icons } from "@/components/icons";
+	import { cva } from 'class-variance-authority';
+	import { cn } from '../lib/client/utils';
+
+	const { isLoading, class: className, variant, size, ...props } = $$props;
+</script>
+
+<button class={cn(buttonVariants({ variant, size, className}))} on:click>
 	{isLoading ? 'Loading...' : ''}
 	<slot />
 </button>

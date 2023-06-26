@@ -1,26 +1,30 @@
 <script lang="ts">
-	import Button from '../components/Button.svelte';
+	import Button from '$components/Button.svelte';
 	import toast, { Toaster } from 'svelte-french-toast';
 	import type { PageData } from './$types';
+	import { siteSections } from '../config/site';
 
 	export let data: PageData;
 
 	function handleClick() {
-		console.log('here');
-		toast.success('@scape76 on Telegram\n scapex76 on Discord');
+		toast('@scape76 on Telegram\n scapex76 on Discord', { duration: 6000 });
 	}
 </script>
 
-<div class="flex flex-col justify-between md:flex-row items-center gap-10 mt-4">
+<section id="about-me" class="flex flex-col justify-between md:flex-row items-center gap-10 mt-4">
 	<div>
 		<h1 class="text-2xl md:text-4xl text-foreground font-bold">
 			Hi, my name is Danya and I am a web developer.
 		</h1>
 		<div class="flex gap-4 mt-4">
-			<Button {handleClick}>
+			<Button on:click={handleClick}>
 				<span> Contact me </span>
 			</Button>
-			<a href="/resume.pdf" download="resume">
+			<a
+				href="https://drive.google.com/file/d/1VZWUbSNpIE92lbvHs86n24dlj8O9Zqoh/view?usp=sharing"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<Button variant={'ghost'}>
 					<span> Resume </span>
 				</Button>
@@ -34,15 +38,15 @@
 		src="/selfie.jpg"
 		alt="my selfie"
 	/>
-</div>
+</section>
 <hr class="w-full border border-border my-6" />
-<div class="w-full flex flex-col gap-4 items-center md:items-start">
+<section id="projects" class="w-full flex flex-col gap-4 items-center md:items-start">
 	<h2 class="text-foregound text-xl md:text-3xl font-semibold">My last projects {'</>'}</h2>
 	{#each data.posts as p}
 		<div
 			class="rounded-lg mt-2 bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] w-full"
 		>
-			<a href={p.link}>
+			<a href={p.link} target="_blank" rel="noreferrer">
 				<div class="flex flex-col md:flex-row items-center justify-center gap-4 p-4">
 					<img
 						src={p.imagePath}
@@ -63,4 +67,4 @@
 			</a>
 		</div>
 	{/each}
-</div>
+</section>

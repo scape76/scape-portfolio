@@ -46,6 +46,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				}
+			},
+			gridTemplateColumns: {
+				'sidebar-content': '15rem auto'
 			}
 		},
 		container: {
