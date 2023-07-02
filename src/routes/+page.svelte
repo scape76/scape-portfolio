@@ -35,7 +35,7 @@
 		loading="lazy"
 		decoding="async"
 		class="aspect-square max-w-xs rounded-full min-w-[13rem] w-[60%] md:w-2/4"
-		src="/selfie.jpg"
+		src="/selfie.png"
 		alt="my selfie"
 	/>
 </section>
