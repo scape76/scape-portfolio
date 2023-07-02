@@ -1,6 +1,5 @@
 <script lang="ts">
 	import MainNav from '$components/MainNav.svelte';
-	import Button from '$components/Button.svelte';
 	import '../styles/globals.css';
 	import { Toaster } from 'svelte-french-toast';
 </script>
